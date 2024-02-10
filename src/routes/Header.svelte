@@ -2,6 +2,30 @@
 	import { page } from '$app/stores'
 	import logo from '$lib/images/svelte-logo.svg'
 	import github from '$lib/images/github.svg'
+
+	// DATA
+	const routes = [
+		{
+			pathname: '/',
+			name: 'Home'
+		},
+		{
+			pathname: '/about',
+			name: 'About'
+		},
+		{
+			pathname: '/sverdle',
+			name: 'Sverdle'
+		},
+		{
+			pathname: '/inactivity',
+			name: 'Inactivity'
+		},
+		{
+			pathname: '/click-outside',
+			name: 'Click Outside'
+		}
+	]
 </script>
 
 <header>
@@ -16,18 +40,17 @@
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
 		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/inactivity' ? 'page' : undefined}>
-				<a href="/inactivity">Inactivity</a>
-			</li>
+			{#each routes as route}
+				{#if !route.pathname.startsWith('/sverdle')}
+					<li aria-current={$page.url.pathname === route.pathname ? 'page' : undefined}>
+						<a href={route.pathname}>{route.name}</a>
+					</li>
+				{:else}
+					<li aria-current={$page.url.pathname.startsWith(route.pathname) ? 'page' : undefined}>
+						<a href={route.pathname}>{route.name}</a>
+					</li>
+				{/if}
+			{/each}
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
