@@ -9,6 +9,8 @@
 
 	onDestroy(() => {
 		clearTimeout(inactivityTimeout)
+		clearTimeout(oneSecondTimeout)
+		secondsRemaining = 0
 	})
 
 	// DATA
