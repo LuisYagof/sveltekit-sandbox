@@ -64,9 +64,9 @@
 	.countdown-wrapper {
 		display: flex;
 		flex-direction: column;
-	}
-	span.seconds {
-		color: var(--color-theme-1);
-		font-size: 1.5rem;
+		& .seconds {
+			color: var(--color-theme-1);
+			font-size: 1.5rem;
+		}
 	}
 </style>

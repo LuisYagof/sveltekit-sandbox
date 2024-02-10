@@ -41,22 +41,21 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-	}
-
-	.button-wrapper {
-		width: 22rem;
-		height: 10rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	.button-wrapper > .button {
-		cursor: pointer;
-		background-color: var(--color-theme-1);
-		color: white;
-		font-family: 'Segoe UI';
-		border: none;
-		padding: var(--dynamic-padding);
-		transition: padding 1s;
+		& .button-wrapper {
+			width: 22rem;
+			height: 10rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			& .button {
+				cursor: pointer;
+				background-color: var(--color-theme-1);
+				color: white;
+				font-family: 'Segoe UI';
+				border: none;
+				padding: var(--dynamic-padding);
+				transition: padding 1s;
+			}
+		}
 	}
 </style>
