@@ -2,6 +2,7 @@
 	import { page } from '$app/stores'
 	import logo from '$lib/images/svelte-logo.svg'
 	import github from '$lib/images/github.svg'
+	// import menu from '$lib/images/menu.svg'
 
 	// DATA
 	const routes = [
@@ -24,6 +25,10 @@
 		{
 			pathname: '/click-outside',
 			name: 'Click Outside'
+		},
+		{
+			pathname: '/infinite-scroll',
+			name: 'Infinite Scroll'
 		}
 	]
 </script>
