@@ -1,11 +1,12 @@
 <script>
+	import Counter from '@/routes/_home/components/Counter.svelte'
 	import welcome from '$lib/images/svelte-welcome.webp'
 	import welcome_fallback from '$lib/images/svelte-welcome.png'
 </script>
 
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="A frontend sandbox powered by Sveltekit" />
+	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
 <section>
@@ -17,19 +18,14 @@
 			</picture>
 		</span>
 
-		to my sandbox
+		to your new<br />SvelteKit app
 	</h1>
 
-	<h3>What is this about?</h3>
-	<h4>
-		This is a collection of frontend utilities and a personal sandbox for new technologies from the
-		Svelte ecosystem.
-	</h4>
-	<h4 class="colored">
-		The utilities displayed include an infinite scroll, an inactivity timeout, a
-		click-outside-an-HTML-node directive, etc.
-	</h4>
-	<h4>The technologies I'm testing include Playwright, Vitest, Sveltkit and more</h4>
+	<h2>
+		try editing <strong>src/routes/+page.svelte</strong>
+	</h2>
+
+	<Counter />
 </section>
 
 <style>
@@ -59,13 +55,5 @@
 		height: 100%;
 		top: 0;
 		display: block;
-	}
-
-	h4 {
-		margin: 0.5rem;
-	}
-
-	h4.colored {
-		color: var(--color-theme-1);
 	}
 </style>

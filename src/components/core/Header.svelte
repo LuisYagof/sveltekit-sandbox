@@ -10,14 +10,14 @@
 			pathname: '/',
 			name: 'Home'
 		},
-		{
-			pathname: '/about',
-			name: 'About'
-		},
-		{
-			pathname: '/sverdle',
-			name: 'Sverdle'
-		},
+		// {
+		// 	pathname: '/about',
+		// 	name: 'About'
+		// },
+		// {
+		// 	pathname: '/sverdle',
+		// 	name: 'Sverdle'
+		// },
 		{
 			pathname: '/inactivity',
 			name: 'Inactivity'
