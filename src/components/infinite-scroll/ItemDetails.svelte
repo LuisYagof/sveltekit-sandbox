@@ -17,6 +17,7 @@
 			font-size: 1.2rem;
 			font-weight: 500;
 			margin-bottom: 0.4rem;
+			margin-top: 0;
 			color: var(--color-text);
 		}
 	}

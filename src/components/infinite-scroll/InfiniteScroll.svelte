@@ -86,10 +86,10 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		padding-right: 2rem;
 	}
 	.wrapper .list .item {
 		display: flex;
-		align-items: center;
 		position: relative;
 	}
 	.wrapper .list .item i {
