@@ -2,6 +2,8 @@
 	import { page } from '$app/stores'
 	import logo from '$lib/images/svelte-logo.svg'
 	import github from '$lib/images/github.svg'
+	import NavBarBig from '@/components/core/NavBarBig.svelte'
+	import NavBarSmall from '@/components/core/NavBarSmall.svelte'
 	// import menu from '$lib/images/menu.svg'
 
 	// DATA
@@ -19,19 +21,25 @@
 		// 	name: 'Sverdle'
 		// },
 		{
-			pathname: '/inactivity',
-			name: 'Inactivity'
+			pathname: '/infinite-scroll',
+			name: 'Infinite Scroll'
 		},
 		{
 			pathname: '/click-outside',
 			name: 'Click Outside'
 		},
 		{
-			pathname: '/infinite-scroll',
-			name: 'Infinite Scroll'
+			pathname: '/inactivity',
+			name: 'Inactivity'
 		}
 	]
+	let innerWidth = 0
+	let innerHeight = 0
+
+	$: bigHeader = innerWidth > 700
 </script>
+
+<svelte:window bind:innerWidth bind:innerHeight />
 
 <header>
 	<div class="corner">
@@ -44,19 +52,11 @@
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
-		<ul>
-			{#each routes as route}
-				{#if !route.pathname.startsWith('/sverdle')}
-					<li aria-current={$page.url.pathname === route.pathname ? 'page' : undefined}>
-						<a href={route.pathname}>{route.name}</a>
-					</li>
-				{:else}
-					<li aria-current={$page.url.pathname.startsWith(route.pathname) ? 'page' : undefined}>
-						<a href={route.pathname}>{route.name}</a>
-					</li>
-				{/if}
-			{/each}
-		</ul>
+		{#if bigHeader}
+			<NavBarBig {routes} />
+		{:else}
+			<NavBarSmall {routes} />
+		{/if}
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
 		</svg>
@@ -108,53 +108,5 @@
 
 	path {
 		fill: var(--background);
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		color: var(--color-text-dark);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
-
-	a:hover {
-		color: var(--color-theme-1);
 	}
 </style>
