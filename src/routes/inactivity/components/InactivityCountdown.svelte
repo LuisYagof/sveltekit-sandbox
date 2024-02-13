@@ -1,6 +1,7 @@
 <script lang="ts">
 	// IMPORTS
 	import { onMount, onDestroy } from 'svelte'
+	import InactivityAlert from '@/components/modals/InactivityAlert.svelte'
 
 	// LIFECYCLE
 	onMount(() => {
@@ -19,6 +20,7 @@
 	let inactivityTimeout: ReturnType<typeof setTimeout> | undefined = undefined
 	let oneSecondTimeout: ReturnType<typeof setTimeout> | undefined = undefined
 	let secondsRemaining = 60
+	let modalIsOpen: boolean
 
 	// FUNCTIONS
 	function beginListeningToScreenEvents() {
@@ -33,7 +35,8 @@
 		const oneMinInMs = 1 * 60 * 1000
 		clearTimeout(inactivityTimeout)
 		inactivityTimeout = setTimeout(() => {
-			window.alert('The app was inactive for one minute')
+			// window.alert('The app was inactive for one minute')
+			modalIsOpen = true
 		}, oneMinInMs)
 	}
 
@@ -60,6 +63,10 @@
 			{secondsRemaining}
 		</span>
 	</span>
+
+	{#if modalIsOpen}
+		<InactivityAlert on:closeModal={() => (modalIsOpen = false)} />
+	{/if}
 </div>
 
 <style>
