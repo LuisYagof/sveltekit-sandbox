@@ -11,6 +11,8 @@
 		clearTimeout(inactivityTimeout)
 		clearTimeout(oneSecondTimeout)
 		secondsRemaining = 0
+		document.removeEventListener('mousemove', resetInactivityTimeout)
+		document.removeEventListener('click', resetInactivityTimeout)
 	})
 
 	// DATA

@@ -73,6 +73,7 @@
 		align-items: flex-start;
 		padding: 1rem 0rem 1rem 2rem;
 		z-index: 1;
+		box-sizing: border-box;
 	}
 
 	li {
