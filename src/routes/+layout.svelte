@@ -1,5 +1,6 @@
 <script>
 	import Header from '@/components/core/Header.svelte'
+	import '@/styles/fonts.css'
 	import '@/styles/styles.css'
 </script>
 

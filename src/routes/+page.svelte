@@ -25,11 +25,13 @@
 		This is a collection of frontend utilities and a personal sandbox for new technologies from the
 		Svelte ecosystem.
 	</h4>
-	<h4 class="colored">
-		The utilities displayed include an infinite scroll, an inactivity timeout, a
-		click-outside-an-HTML-node directive, etc.
-	</h4>
-	<h4>The technologies I'm testing include Playwright, Vitest, Sveltkit and more</h4>
+	<div>
+		<h4 class="colored">
+			The utilities displayed include an infinite scroll, an inactivity timeout, a
+			click-outside-an-HTML-node directive, etc.
+		</h4>
+		<h4>The technologies I'm testing include Playwright, Vitest, Sveltkit and more</h4>
+	</div>
 </section>
 
 <style>

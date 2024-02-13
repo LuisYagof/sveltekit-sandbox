@@ -51,7 +51,7 @@
 				cursor: pointer;
 				background-color: var(--color-theme-1);
 				color: white;
-				font-family: 'Segoe UI';
+				font-family: Nunito;
 				border: none;
 				padding: var(--dynamic-padding);
 				transition: padding 1s;
